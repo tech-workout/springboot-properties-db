@@ -27,9 +27,7 @@ public class PropsInitializer implements BeanPostProcessor, InitializingBean, En
 
   @Override
   public void afterPropertiesSet() throws Exception {
-    System.out.println("Coming here - 1");
     if (null != environment) {
-      System.out.println("Coming here - 2");
       Map<String, Object> systemConfigMap = new HashMap<>();
       String sql = "SELECT key, value from props";
       List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql);
